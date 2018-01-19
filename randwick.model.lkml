@@ -7,5 +7,5 @@ include: "*.view"
 include: "*.dashboard"
 
 explore: rand_gas {
-  label: "Chifley Gas"
+  label: "Rand Gas"
 }

@@ -1,5 +1,5 @@
 view: rand_gas {
-  sql_table_name: public.ctsfieldmousedata ;;
+  sql_table_name: public.rand_gas ;;
 
   dimension: a1 {
     group_label: "Analogs"
@@ -109,5 +109,3 @@ view: rand_gas {
   }
 
 }
-
-
