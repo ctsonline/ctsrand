@@ -1,5 +1,5 @@
 view: rand_gas {
-  sql_table_name: public.public.ctsfieldmousedata ;;
+  sql_table_name: public.ctsfieldmousedata ;;
 
   dimension: a1 {
     group_label: "Analogs"
@@ -75,9 +75,11 @@ view: rand_gas {
     sql: ${TABLE}.sid ;;
   }
 
+
+
   dimension_group: timestamp {
     type: time
-    timeframes: [raw, time, time_of_day, date, week, month]
+    timeframes: [raw, time, time_of_day, date, hour, week, month]
     sql: TIMESTAMPTZ(${TABLE}.timestamp);;
   }
 
