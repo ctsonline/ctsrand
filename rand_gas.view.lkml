@@ -1,5 +1,5 @@
 view: rand_gas {
-  sql_table_name: public.ctsfieldmousedata ;;
+  sql_table_name: ctsfieldmousedata ;;
 
   dimension: a1 {
     group_label: "Analogs"
@@ -79,15 +79,21 @@ view: rand_gas {
 
   dimension_group: timestamp {
     type: time
-    timeframes: [raw, time, time_of_day, date, hour, week, month]
+    timeframes: [raw, time, time_of_day, date, hour, week, month, minute30  ]
     sql: TIMESTAMPTZ(${TABLE}.timestamp);;
   }
+
 
 #   2017.11.14 AD at 13:31:28 AEDT
 
   measure: count {
     type: count
     drill_fields: []
+  }
+
+  measure: value_a2 {
+    type: date_hour
+    sql: ${a1} ;;
   }
 
   measure: average_value_a1 {
