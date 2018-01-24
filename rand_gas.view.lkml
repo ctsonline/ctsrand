@@ -79,9 +79,10 @@ view: rand_gas {
 
   dimension_group: timestamp {
     type: time
+    convert_tz: yes
     timeframes: [raw, time, time_of_day, date, hour, week, month, minute30  ]
-    sql: TIMESTAMPTZ(${TABLE}.timestamp);;
-  }
+    sql: convert_timezone('AEDT','AEDT', ${TABLE}.timestamp::timestamp);;
+    }
 
 
 #   2017.11.14 AD at 13:31:28 AEDT
