@@ -9,3 +9,7 @@ include: "*.dashboard"
 explore: rand_gas {
   label: "Rand Gas"
 }
+
+explore: rand_swh {
+  label: "Rand SWH"
+}
