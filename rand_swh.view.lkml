@@ -45,9 +45,9 @@ view: rand_swh {
   }
 
 
-  dimension_group: reading {
+    dimension_group: reading {
     type: time
-    timeframes: [raw, date, time, hour_of_day]
+    timeframes: [raw, date, time, hour, hour_of_day, day_of_week, week,]
     sql: cast(TIMESTAMPTZ(${TABLE}.t1) as timestamp);;
   }
 
