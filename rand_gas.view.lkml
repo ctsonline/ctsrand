@@ -1,4 +1,5 @@
 view: rand_gas {
+  view_label: "rand gas"
   sql_table_name: ctsfieldmousedata ;;
 
   dimension: a1 {
