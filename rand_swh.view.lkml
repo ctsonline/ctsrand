@@ -1,4 +1,5 @@
 view: rand_swh {
+  view_label: "rand swh"
   sql_table_name: rand_swh ;;
 
   dimension: lat {
@@ -68,4 +69,3 @@ view: rand_swh {
   }
 
   }
-
