@@ -1,69 +1,71 @@
 view: rand_swh {
-  # # You can specify the table name if it's different from the view name:
-  # sql_table_name: my_schema_name.tester ;;
-  #
-  # # Define your dimensions and measures here, like this:
-  # dimension: user_id {
-  #   description: "Unique ID for each user that has ordered"
-  #   type: number
-  #   sql: ${TABLE}.user_id ;;
-  # }
-  #
-  # dimension: lifetime_orders {
-  #   description: "The total number of orders for each user"
-  #   type: number
-  #   sql: ${TABLE}.lifetime_orders ;;
-  # }
-  #
-  # dimension_group: most_recent_purchase {
-  #   description: "The date when each user last ordered"
-  #   type: time
-  #   timeframes: [date, week, month, year]
-  #   sql: ${TABLE}.most_recent_purchase_at ;;
-  # }
-  #
-  # measure: total_lifetime_orders {
-  #   description: "Use this for counting lifetime orders across many users"
-  #   type: sum
-  #   sql: ${lifetime_orders} ;;
-  # }
-}
+  sql_table_name: rand_swh ;;
 
-# view: rand_swh {
-#   # Or, you could make this view a derived table, like this:
-#   derived_table: {
-#     sql: SELECT
-#         user_id as user_id
-#         , COUNT(*) as lifetime_orders
-#         , MAX(orders.created_at) as most_recent_purchase_at
-#       FROM orders
-#       GROUP BY user_id
-#       ;;
-#   }
-#
-#   # Define your dimensions and measures here, like this:
-#   dimension: user_id {
-#     description: "Unique ID for each user that has ordered"
-#     type: number
-#     sql: ${TABLE}.user_id ;;
-#   }
-#
-#   dimension: lifetime_orders {
-#     description: "The total number of orders for each user"
-#     type: number
-#     sql: ${TABLE}.lifetime_orders ;;
-#   }
-#
-#   dimension_group: most_recent_purchase {
-#     description: "The date when each user last ordered"
-#     type: time
-#     timeframes: [date, week, month, year]
-#     sql: ${TABLE}.most_recent_purchase_at ;;
-#   }
-#
-#   measure: total_lifetime_orders {
-#     description: "Use this for counting lifetime orders across many users"
-#     type: sum
-#     sql: ${lifetime_orders} ;;
-#   }
-# }
+  dimension: lat {
+    label: "Latitude"
+    type: number
+    sql: ${TABLE}.lat ;;
+  }
+
+  dimension: long {
+    label: "Longitude"
+    type: number
+    sql: ${TABLE}.long ;;
+  }
+
+# FieldUnits.Birrarung SWH.AnalogInputs.BMarr PRIM TNK LVL.Value
+# FieldUnits.Birrarung SWH.AnalogInputs.BMarr Reuse Tank EC.Value
+
+  dimension: name {
+    label: "Long Name"
+    type: string
+    sql: ${TABLE}.name ;;
+  }
+
+
+  dimension: location {
+    type: string
+    sql: split_part(${name}, '.', 2) ;;
+  }
+
+  dimension: data_type {
+    type: string
+    sql: split_part(${name}, '.', 3) ;;
+  }
+
+  dimension: description {
+    type: string
+    sql: split_part(${name}, '.', 4) ;;
+  }
+
+  dimension: measurement_type {
+    type: string
+    sql: split_part(${name}, '.', 5) ;;
+  }
+
+
+  dimension_group: reading {
+    type: time
+    timeframes: [raw, date, time, hour_of_day]
+    sql: cast(TIMESTAMPTZ(${TABLE}.t1) as timestamp);;
+  }
+
+  dimension: v1 {
+    label: "Value"
+    type: number
+    sql: ${TABLE}.v1 ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: [name]
+  }
+
+  measure: average_value {
+    type: average
+    sql: ${v1} ;;
+    value_format_name: decimal_2
+  }
+
+  }
+
