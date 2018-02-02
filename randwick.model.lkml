@@ -15,5 +15,5 @@ explore: rand_swh {
 }
 
 explore: rand_water_meters {
-  label: "Rand SWH"
+  label: "Rand Water Meters"
 }
