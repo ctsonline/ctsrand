@@ -13,3 +13,7 @@ explore: rand_gas {
 explore: rand_swh {
   label: "Rand SWH"
 }
+
+explore: rand_water_meters {
+  label: "Rand SWH"
+}
