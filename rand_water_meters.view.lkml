@@ -1,4 +1,5 @@
 view: rand_water_meters {
+  view_label: "rand water meters"
    sql_table_name: public.rand_water_meters ;;
 
   dimension: Value{
