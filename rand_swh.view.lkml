@@ -14,8 +14,13 @@ view: rand_swh {
     sql: ${TABLE}.long ;;
   }
 
-# FieldUnits.Birrarung SWH.AnalogInputs.BMarr PRIM TNK LVL.Value
-# FieldUnits.Birrarung SWH.AnalogInputs.BMarr Reuse Tank EC.Value
+# 23  FieldUnits.Truck Wash.AnalogInputs.Trade Waste Meter - Truck Wsh.Value
+# 24  FieldUnits.Truck Wash.AnalogInputs.Turbidity - Truck Wash.Value
+# 25  FieldUnits.Truck Wash.AnalogInputs.Wind Direction - Truck Wash.Value
+# 26  FieldUnits.Truck Wash.AnalogInputs.Wind Speed - Truck Wash.Value
+# 27  FieldUnits.Truck Wash.Meters.TWM001 - Toilet Water Usage - Truck Wash.Flow
+# 28  FieldUnits.Truck Wash.Meters.WWM001 - Trade Waste Meter - Truck Wash.Flow
+
 
   dimension: name {
     label: "Long Name"
