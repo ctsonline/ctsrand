@@ -52,9 +52,8 @@ view: rand_water_meters {
 
 
 
-### FieldUnits.Albert St 1.Meters.ALBE FM.Accumulator
-### FieldUnits.Albert St 1.Meters.ALBE FM.Flow
-### FieldUnits.Alex Pump.Meters.MWM BTHS DRV ALEX PMP.Flow
+### FieldUnits.Bardon.Meters.IWM008 - Irrigation Water Meter - Bardon.Accumulator
+### FieldUnits.Bardon.Meters.IWM008 - Irrigation Water Meter - Bardon.Flow
 
   dimension: lat {
     type: number
