@@ -35,7 +35,6 @@ view: rand_water_meters {
   }
 
   dimension:  location {
-    label: "Meter Location"
     type: string
     sql: split_part(${name}, '.',4 ) ;;
   }
