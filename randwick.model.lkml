@@ -17,3 +17,11 @@ explore: rand_swh {
 explore: rand_water_meters {
   label: "Rand Water Meters"
 }
+
+explore: rand_truck_wash_meters {
+  label: "Rand Truck Wash Meters"
+}
+
+explore: rand_gpt {
+  label: "Rand GPT Levels"
+}
