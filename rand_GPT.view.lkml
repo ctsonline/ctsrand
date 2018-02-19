@@ -102,6 +102,7 @@ view: rand_gpt {
   measure: value_a2 {
     type: date_hour
     sql: ${a1} ;;
+    drill_fields: [timestamp_hour,a2,average_value_a2,timestamp_month]
   }
 
   measure: average_value_a1 {
