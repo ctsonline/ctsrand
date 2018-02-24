@@ -80,8 +80,9 @@ view: rand_gpt {
   dimension_group: timestamp {
     type: time
     convert_tz: yes
-    timeframes: [raw, time, time_of_day, hour, date, week, month]
+    timeframes: [raw, time, time_of_day, hour_of_day,hour, date, week, month]
     sql: ${TABLE}.timestamp::timestamp;;
+    drill_fields: [timestamp_date, timestamp_hour_of_day,average_value_a3]
   }
 
   ##dimension_group: timestamp {
@@ -102,7 +103,7 @@ view: rand_gpt {
   measure: value_a2 {
     type: date_hour
     sql: ${a1} ;;
-    drill_fields: [timestamp_hour,a2,average_value_a2,timestamp_month]
+    drill_fields: [timestamp_hour,a2,average_value_a3,timestamp_month]
   }
 
   measure: average_value_a1 {
