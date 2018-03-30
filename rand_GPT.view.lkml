@@ -103,27 +103,31 @@ view: rand_gpt {
   measure: value_a2 {
     type: date_hour
     sql: ${a1} ;;
-    drill_fields: [timestamp_hour,a2,average_value_a3,timestamp_month]
+    drill_fields: [timestamp_hour,a2,value_a2,a2,timestamp_date,timestamp_raw]
   }
 
   measure: average_value_a1 {
     type: average
     sql: ${a1} ;;
+    drill_fields: [timestamp_hour,a2,average_value_a1,a1,timestamp_date,timestamp_raw]
   }
 
   measure: average_value_a2 {
     type: average
     sql: ${a2} ;;
+    drill_fields: [timestamp_hour,average_value_a2,a2,timestamp_date,timestamp_raw]
   }
 
   measure: average_value_a3 {
     type: average
     sql: ${a3} ;;
+    drill_fields: [timestamp_hour,a3,average_value_a3,timestamp_date,timestamp_raw]
   }
 
   measure: average_value_a4 {
     type: average
     sql: ${a4} ;;
+    drill_fields: [timestamp_hour,a4,average_value_a4,timestamp_date,timestamp_raw]
   }
 
 }
