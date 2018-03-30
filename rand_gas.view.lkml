@@ -107,7 +107,8 @@ dimension_group: t1 {
 
   measure: value_a2 {
     type: date_hour
-    sql: ${a1} ;;
+    sql: ${a1}
+    ;;
   }
 
   measure: average_value_a1 {
@@ -128,6 +129,11 @@ dimension_group: t1 {
   measure: average_value_a4 {
     type: average
     sql: ${a4} ;;
+  }
+
+  measure: count_readings {
+    type: count
+    drill_fields: [average_value_a1,average_value_a2,average_value_a3,average_value_a4,]
   }
 
 }
