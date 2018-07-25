@@ -4,7 +4,7 @@ connection: "ctsdev"
 include: "*.view"
 
 # include all the dashboards
-include: "*.dashboard"
+# include: "*.dashboard"
 
 explore: rand_gas {
   label: "Rand Gas"
@@ -24,4 +24,8 @@ explore: rand_truck_wash_meters {
 
 explore: rand_gpt {
   label: "Rand GPT Levels"
+}
+
+explore: rand_fieldmousedata {
+  label: "Rand Fieldmouse data"
 }
