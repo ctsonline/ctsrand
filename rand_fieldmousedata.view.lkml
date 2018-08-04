@@ -26,12 +26,7 @@ view: rand_fieldmousedata {
       sql: ${TABLE}.a4 ;;
     }
 
-    dimension: cid {
-      label: "Customer ID"
-      type: number
-      value_format_name: id
-      sql: ${TABLE}.cid ;;
-    }
+
 
     dimension: d1 {
       group_label: "Digital"
@@ -73,8 +68,28 @@ view: rand_fieldmousedata {
       label: "Site ID"
       type: number
       value_format_name: id
-      sql: ${TABLE}.sid ;;
+      sql: ${TABLE}.sid;;
     }
+
+
+  dimension: site_name{
+    label: "Site Name"
+    type: string
+    sql: REPLACE(${sid},'3','BBQ');;
+  }
+
+  dimension: cid {
+    label: "Customer ID"
+    type: number
+    value_format_name: id
+    sql: ${TABLE}.cid ;;
+  }
+
+  dimension: client_name {
+    type: string
+    hidden: no
+    sql: REPLACE(${cid},'21','Randwick') ;;
+  }
 
     dimension_group: t1 {
       type: time
