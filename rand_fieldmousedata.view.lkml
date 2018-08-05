@@ -1,6 +1,6 @@
 view: rand_fieldmousedata {
      view_label: "rand fmd"
-    sql_table_name: public.ctsfieldmousedata ;;
+    sql_table_name: ctsfieldmousedata ;;
 
     dimension: a1 {
       group_label: "Analogs"
@@ -26,7 +26,12 @@ view: rand_fieldmousedata {
       sql: ${TABLE}.a4 ;;
     }
 
-
+  dimension_group: timestamp {
+    type: time
+    timeframes: [raw, time, time_of_day, date, week, month, hour_of_day, hour, hour3, minute, minute10]
+    sql: TIMESTAMPTZ(${TABLE}.timestamp);;
+    drill_fields: [timestamp_date,timestamp_hour,timestamp_week]
+  }
 
     dimension: d1 {
       group_label: "Digital"
@@ -71,11 +76,7 @@ view: rand_fieldmousedata {
       sql: ${TABLE}.sid;;
     }
 
-  dimension: site_name{
-    type: string
-    hidden: no
-    sql: REPLACE(REPLACE(REPLACE(REPLACE(${sid},'3','BBQ'),'4','Bin'),'1','GPT'),'2','Maroub WM') ;;
-  }
+
 
   dimension: site_name2{
     type: string
@@ -97,19 +98,6 @@ view: rand_fieldmousedata {
     sql: REPLACE(${cid},'21','Randwick') ;;
   }
 
-    dimension_group: t1 {
-      type: time
-      timeframes: [raw, hour_of_day, day_of_week, time_of_day, date]
-      sql: ${TABLE}t1 ;;
-    }
-
-    dimension_group: timestamp {
-      label: "Time real"
-      type: time
-      convert_tz: yes
-      timeframes: [raw, time, time_of_day, hour, date, week, month]
-      sql: ${TABLE}.timestamp::timestamp;;
-    }
 
     ##dimension_group: timestamp {
     ## type: time
