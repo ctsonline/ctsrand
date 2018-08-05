@@ -75,7 +75,7 @@ view: rand_fieldmousedata {
   dimension: site_name{
     label: "Site Name"
     type: string
-    sql: REPLACE((((${sid},'3','BBQ'),'1','GPT'),'2','WM'),'4','Bin') ;;
+    sql: REPLACE((((${sid},"3","BBQ"),"1","GPT"),"2","WM"),"4","Bin") ;;
   }
 
   dimension: cid {
@@ -88,7 +88,7 @@ view: rand_fieldmousedata {
   dimension: client_name {
     type: string
     hidden: no
-    sql: REPLACE(${cid},'21','Randwick') ;;
+    sql: REPLACE(${cid},"21","Randwick") ;;
   }
 
     dimension_group: t1 {
