@@ -1,6 +1,6 @@
 view: rand_fieldmousedata {
      view_label: "rand fmd"
-    sql_table_name: ctsfieldmousedata ;;
+    sql_table_name: public.ctsfieldmousedata ;;
 
     dimension: a1 {
       group_label: "Analogs"
@@ -71,12 +71,18 @@ view: rand_fieldmousedata {
       sql: ${TABLE}.sid;;
     }
 
-
   dimension: site_name{
-    label: "Site Name"
     type: string
-    sql: REPLACE((((${sid},"3","BBQ"),"1","GPT"),"2","WM"),"4","Bin") ;;
+    hidden: no
+    sql: REPLACE(REPLACE(REPLACE(REPLACE(${sid},'3','BBQ'),'4','Bin'),'1','GPT'),'2','Maroub WM') ;;
   }
+
+  dimension: site_name2{
+    type: string
+    hidden: no
+    sql: REPLACE(${sid},'4','Bin');;
+  }
+
 
   dimension: cid {
     label: "Customer ID"
@@ -88,7 +94,7 @@ view: rand_fieldmousedata {
   dimension: client_name {
     type: string
     hidden: no
-    sql: REPLACE(${cid},"21","Randwick") ;;
+    sql: REPLACE(${cid},'21','Randwick') ;;
   }
 
     dimension_group: t1 {
