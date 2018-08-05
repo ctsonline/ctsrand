@@ -75,7 +75,7 @@ view: rand_fieldmousedata {
   dimension: site_name{
     label: "Site Name"
     type: string
-    sql: REPLACE((((${sid},'3','BBQ'),'1','GPT'),'2','WM'),'4','Bin' ;;
+    sql: REPLACE((((${sid},'3','BBQ'),'1','GPT'),'2','WM'),'4','Bin') ;;
   }
 
   dimension: cid {
