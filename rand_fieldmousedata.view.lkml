@@ -98,18 +98,17 @@ view: rand_fieldmousedata {
       drill_fields: []
     }
 
-
     measure: average_value_a1 {
       type: average
       sql: ${a1} ;;
     }
 
-    measure: average_value_a2 {
+     measure: average_value_a2 {
       type: average
       sql: ${a2} ;;
     }
 
-    measure: average_value_a3 {
+      measure: average_value_a3 {
       type: average
       sql: ${a3} ;;
     }
@@ -118,6 +117,26 @@ view: rand_fieldmousedata {
       type: average
       sql: ${a4} ;;
     }
+
+  measure: max_value_a1 {
+    type: max
+    sql: ${a1} ;;
+  }
+
+  measure: max_value_a2 {
+    type: max
+    sql: ${a2} ;;
+  }
+
+  measure: max_value_a3 {
+    type: max
+    sql: ${a3} ;;
+  }
+
+  measure: max_value_a4 {
+    type: max
+    sql: ${a4} ;;
+  }
 
     measure: count_readings {
       type: count
