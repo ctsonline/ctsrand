@@ -81,8 +81,22 @@ view: rand_fieldmousedata {
     hidden: yes
     type: date
     sql: ${TABLE}.t1 ;;
-
   }
+
+  dimension_group: t1 {
+    type: time
+    timeframes: [raw, hour_of_day, day_of_week, time_of_day, date]
+    sql: ${TABLE}t1 ;;
+  }
+
+  dimension_group: timestamp {
+    label: "Time real"
+    type: time
+    convert_tz: yes
+    timeframes: [raw, time, time_of_day, hour, date, week, month]
+    sql: ${TABLE}.timestamp::timestamp;;
+  }
+
     ##dimension_group: timestamp {
     ## type: time
     ##convert_tz: yes
