@@ -29,7 +29,3 @@ explore: rand_gpt {
 explore: rand_fieldmousedata {
   label: "Rand Fieldmouse data"
 }
-
-explore: rand_bins {
-  label: "Rand Bins"
-}
