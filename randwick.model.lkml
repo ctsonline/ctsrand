@@ -31,5 +31,5 @@ explore: rand_fieldmousedata {
 }
 
 explore: rand_bins {
-  label: "Rand Waste Bins"
+  label: "Rand Bins"
 }
