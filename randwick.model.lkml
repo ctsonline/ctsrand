@@ -30,6 +30,6 @@ explore: rand_fieldmousedata {
   label: "Rand Fieldmouse data"
 }
 
-explore: rand_wastebins {
+explore: rand_bins {
   label: "Rand Waste Bins"
 }

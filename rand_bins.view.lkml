@@ -1,5 +1,4 @@
-view: rand_wastebins {
-  view_label: "rand fmd"
+view: rand_bins {
   sql_table_name: public.ctsfieldmousedata ;;
 
   dimension: a1 {
@@ -62,32 +61,18 @@ view: rand_wastebins {
     sql: ${TABLE}.r4 ;;
   }
 
-  dimension: sid {
+  dimension: timestamp {
     label: "Site ID"
-    type: number
-    value_format_name: id
-    sql: ${TABLE}.sid;;
+    type: date_time
+    sql: ${TABLE}.timestamp;;
   }
+
 
   dimension: cid {
     label: "Customer ID"
     type: number
     value_format_name: id
     sql: ${TABLE}.cid ;;
-  }
-
-
-  dimension: date {
-    label: "date"
-    hidden: yes
-    type: date
-    sql: ${TABLE}.t1 ;;
-  }
-
-  dimension_group: t1 {
-    type: time
-    timeframes: [raw, hour_of_day, day_of_week, time_of_day, date]
-    sql: ${TABLE}t1 ;;
   }
 
   dimension_group: timestamp {
@@ -97,6 +82,7 @@ view: rand_wastebins {
     timeframes: [raw, time, time_of_day, hour, date, week, month]
     sql: ${TABLE}.timestamp::timestamp;;
   }
+
 
   ##dimension_group: timestamp {
   ## type: time

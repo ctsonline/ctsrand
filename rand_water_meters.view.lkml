@@ -13,13 +13,6 @@ view: rand_water_meters {
     sql: cast(TIMESTAMPTZ(${TABLE}.t1) as timestamp);;
   }
 
-  dimension_group: timestamp {
-    type: time
-    convert_tz: yes
-    timeframes: [raw, time, time_of_day, hour_of_day,hour, date, week, month]
-    sql: ${TABLE}.timestamp::timestamp;;
-    drill_fields: [timestamp_date, timestamp_hour_of_day,]
-  }
 
   dimension: name {
     label: "Long Name"
