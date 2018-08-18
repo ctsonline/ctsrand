@@ -27,5 +27,5 @@ explore: rand_gpt {
 }
 
 explore: rand_fieldmousedata {
-  label: "Rand Fieldmouse data"
+  label: "Rand Fieldmousedata"
 }

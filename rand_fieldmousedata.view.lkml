@@ -1,6 +1,5 @@
 view: rand_fieldmousedata {
-     view_label: "rand fmd"
-    sql_table_name: public.ctsfieldmousedata ;;
+        sql_table_name: public.ctsfieldmousedata ;;
 
     dimension: a1 {
       group_label: "Analogs"
@@ -76,6 +75,12 @@ view: rand_fieldmousedata {
     sql: ${TABLE}.cid ;;
   }
 
+  dimension: site_name {
+    type: string
+    hidden: no
+    sql: REPLACE(${sid},'3','Coogee Amen') ;;
+  }
+
   dimension: date {
     label: "date"
     hidden: yes
@@ -90,11 +95,9 @@ view: rand_fieldmousedata {
   }
 
   dimension_group: timestamp {
-    label: "Time real"
-    type: time
-    convert_tz: yes
+    type:time
     timeframes: [raw, time, time_of_day, hour, date, week, month]
-    sql: ${TABLE}.timestamp::timestamp;;
+    sql: TIMESTAMPTZ(${TABLE}.timestamp);;
   }
 
     ##dimension_group: timestamp {
@@ -107,6 +110,15 @@ view: rand_fieldmousedata {
 
 #   2017.11.14 AD at 13:31:28 AEDT
 
+  measure: d1_max {
+    type: max
+    sql: ${d1} ;;
+  }
+
+  measure: d2_max {
+    type: max
+    sql: ${d2} ;;
+  }
     measure: count {
       type: count
       drill_fields: []
@@ -151,9 +163,4 @@ view: rand_fieldmousedata {
     type: max
     sql: ${a4} ;;
   }
-
-    measure: count_readings {
-      type: count
-      drill_fields: [average_value_a1,average_value_a2,average_value_a3,average_value_a4,]
-    }
-   }
+ }
