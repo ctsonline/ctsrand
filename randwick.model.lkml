@@ -29,3 +29,7 @@ explore: rand_gpt {
 explore: rand_fieldmousedata {
   label: "Rand Fieldmousedata"
 }
+
+explore: rand_power {
+  label: "Rand Power"
+}
