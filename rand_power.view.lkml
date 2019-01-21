@@ -1,6 +1,6 @@
 view: rand_power {
-view_label: "rand Truck Wash Meters"
-  sql_table_name: public.rand_swh ;;
+view_label: "Rand Power"
+  sql_table_name: public.rand_power ;;
 
   dimension: Value{
     label: "Meter Values"
