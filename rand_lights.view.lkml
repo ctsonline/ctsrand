@@ -68,10 +68,10 @@ view: rand_lights {
     sql: ${TABLE}.sid;;
   }
 
-dimension: site_name {
+dimension: sid_nagle{
   type: string
   hidden: no
-  sql: REPLACE(${sid},'4','NAgel') ;;
+  sql: REPLACE(${sid},'4','Nagel') ;;
 }
   dimension: cid {
     label: "Customer ID"
