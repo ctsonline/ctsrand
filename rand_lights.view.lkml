@@ -68,6 +68,11 @@ view: rand_lights {
     sql: ${TABLE}.sid;;
   }
 
+dimension: site_name {
+  type: string
+  hidden: no
+  sql: REPLACE(${sid},'4','NAgel') ;;
+}
   dimension: cid {
     label: "Customer ID"
     type: number
@@ -75,7 +80,7 @@ view: rand_lights {
     sql: ${TABLE}.cid ;;
   }
 
-  dimension: site_name {
+  dimension: sid_Cogee {
     type: string
     hidden: no
     sql: REPLACE(${sid},'3','Coogee Amen') ;;
@@ -110,12 +115,26 @@ view: rand_lights {
 
 #   2017.11.14 AD at 13:31:28 AEDT
 
-  measure: d1_max {
+  measure: r1_max {
+    label: "Light Relay 1"
+    type: max
+    sql: ${r1}} ;;
+  }
+
+  measure: r2_max {
+    label: "Light Relay 2"
+    type: max
+    sql: ${r2}} ;;
+  }
+
+ measure: d1_max {
+    label: "Light Contactor 1"
     type: max
     sql: ${d1} ;;
   }
 
   measure: d2_max {
+    label: "Light Contactor 2"
     type: max
     sql: ${d2} ;;
   }
