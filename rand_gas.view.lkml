@@ -34,6 +34,7 @@ view: rand_gas {
   }
 
   dimension: d1 {
+    label: "Light Contactor 1"
     group_label: "Digital"
     type: number
     sql: ${TABLE}.d1 ;;
@@ -46,6 +47,7 @@ view: rand_gas {
   }
 
   dimension: r1 {
+    label: "Light Relay 1"
     group_label: "Relays"
     type: number
     sql: ${TABLE}.r1 ;;
