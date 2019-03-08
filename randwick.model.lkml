@@ -33,3 +33,7 @@ explore: rand_fieldmousedata {
 explore: rand_power {
   label: "Rand Power"
 }
+
+explore: rand_lights {
+  label: "Rand Lights"
+}
