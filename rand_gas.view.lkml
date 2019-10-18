@@ -1,6 +1,6 @@
 view: rand_gas {
   view_label: "rand gas"
-  sql_table_name: ctsfieldmousedata ;;
+  sql_table_name: public.ctsfieldmousedata ;;
 
   dimension: a1 {
     group_label: "Analogs"
